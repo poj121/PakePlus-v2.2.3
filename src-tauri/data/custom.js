@@ -17,10 +17,11 @@ const hookClick = (e) => {
         console.log('not handle origin', origin)
     }
 }
-
-window.open = function (url, target, features) {
-    console.log('open', url, target, features)
-    location.href = url
-}
-
-document.addEventListener('click', hookClick, { capture: true })
+document.addEventListener('DOMContentLoaded', function() {
+    var topDiv = document.getElementById('idTop');
+    if (topDiv) {
+        topDiv.style.display = 'none';   // 彻底隐藏，不占空间
+        // 或者 topDiv.style.visibility = 'hidden'; // 隐藏但占位
+        console.log('顶部标题栏已隐藏');
+    }
+});
