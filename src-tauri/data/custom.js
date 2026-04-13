@@ -25,3 +25,4 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('顶部标题栏已隐藏');
     }
 });
+document.onselectstart = function() { return false; };
